@@ -4,6 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>CASE | 심리 기반 성향 분석 리포트</title>
+  <!-- 토스페이먼츠 결제위젯 SDK -->
+  <script src="https://js.tosspayments.com/v2/standard"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300&display=swap" rel="stylesheet">
   <style>
@@ -776,15 +778,15 @@
     <p class="modal-price">19,900원 · 결제 후 영업일 기준 24시간 이내 PDF 이메일 발송</p>
     <div class="mfield">
       <label>이름 *</label>
-      <input type="text" placeholder="홍길동">
+      <input type="text" id="inputName" placeholder="홍길동">
     </div>
     <div class="mfield">
       <label>이메일 (리포트 수신 주소) *</label>
-      <input type="email" placeholder="example@email.com">
+      <input type="email" id="inputEmail" placeholder="example@email.com">
     </div>
     <div class="mfield">
       <label>현재 상황 / 분석 요청사항 (선택)</label>
-      <textarea rows="3" placeholder="현재 고민하시는 상황을 간략히 적어주시면 더 정밀한 분석이 가능합니다."></textarea>
+      <textarea rows="3" id="inputMemo" placeholder="현재 고민하시는 상황을 간략히 적어주시면 더 정밀한 분석이 가능합니다."></textarea>
     </div>
     <div class="mcheck">
       <input type="checkbox" id="ck1">
@@ -794,18 +796,31 @@
       <input type="checkbox" id="ck2">
       <label for="ck2"><a href="#policies">환불정책</a>에 동의합니다 — 리포트 발송 후 환불 불가 (필수)</label>
     </div>
-    <button class="modal-cta">결제하기</button>
+    <p id="errorMsg" style="font-size:12px; color:#c0392b; margin-top:8px; display:none;"></p>
+    <button class="modal-cta" id="payBtn">결제하기</button>
   </div>
 </div>
 
 <script>
+// ★ 아래 YOUR_CLIENT_KEY 를 토스페이먼츠 개발자센터의 테스트 클라이언트 키로 교체하세요
+// 예시: test_ck_D5GePWvyJnrK0W0k6q8gLzN97Eoq
+var TOSS_CLIENT_KEY = 'test_ck_ZLKGPx4M3MRdxm7wyq44VBaWypv1';
+
+var currentProductName = '';
+
 document.addEventListener('DOMContentLoaded', function() {
 
-  // 모달 열기 - 신청하기 버튼
+  // 모달 열기
   document.querySelectorAll('.modal-trigger').forEach(function(btn) {
     btn.addEventListener('click', function() {
-      var title = this.getAttribute('data-title');
-      document.getElementById('mTitle').textContent = title;
+      currentProductName = this.getAttribute('data-title');
+      document.getElementById('mTitle').textContent = currentProductName;
+      document.getElementById('errorMsg').style.display = 'none';
+      document.getElementById('inputName').value = '';
+      document.getElementById('inputEmail').value = '';
+      document.getElementById('inputMemo').value = '';
+      document.getElementById('ck1').checked = false;
+      document.getElementById('ck2').checked = false;
       document.getElementById('modal').classList.add('open');
       document.body.style.overflow = 'hidden';
     });
@@ -823,6 +838,50 @@ document.addEventListener('DOMContentLoaded', function() {
       this.classList.remove('open');
       document.body.style.overflow = '';
     }
+  });
+
+  // 결제하기 버튼
+  document.getElementById('payBtn').addEventListener('click', function() {
+    var name  = document.getElementById('inputName').value.trim();
+    var email = document.getElementById('inputEmail').value.trim();
+    var ck1   = document.getElementById('ck1').checked;
+    var ck2   = document.getElementById('ck2').checked;
+    var errEl = document.getElementById('errorMsg');
+
+    // 유효성 검사
+    if (!name) {
+      errEl.textContent = '이름을 입력해주세요.';
+      errEl.style.display = 'block'; return;
+    }
+    if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+      errEl.textContent = '올바른 이메일 주소를 입력해주세요.';
+      errEl.style.display = 'block'; return;
+    }
+    if (!ck1 || !ck2) {
+      errEl.textContent = '필수 약관에 모두 동의해주세요.';
+      errEl.style.display = 'block'; return;
+    }
+    errEl.style.display = 'none';
+
+    // 주문번호 생성 (고유값)
+    var orderId = 'CASE-' + Date.now() + '-' + Math.random().toString(36).substr(2, 6).toUpperCase();
+
+    // 토스페이먼츠 결제 요청
+    var tossPayments = TossPayments(TOSS_CLIENT_KEY);
+    tossPayments.requestPayment('카드', {
+      amount: 19900,
+      orderId: orderId,
+      orderName: currentProductName,
+      customerName: name,
+      customerEmail: email,
+      successUrl: window.location.origin + window.location.pathname + '?success=true&orderId=' + orderId + '&email=' + encodeURIComponent(email) + '&product=' + encodeURIComponent(currentProductName),
+      failUrl: window.location.origin + window.location.pathname + '?fail=true',
+    }).catch(function(err) {
+      if (err.code !== 'USER_CANCEL') {
+        errEl.textContent = '결제 중 오류가 발생했습니다: ' + err.message;
+        errEl.style.display = 'block';
+      }
+    });
   });
 
   // 탭 전환
@@ -846,6 +905,17 @@ document.addEventListener('DOMContentLoaded', function() {
       document.querySelector('.tab-btn[data-tab="' + id + '"]').classList.add('on');
     });
   });
+
+  // 결제 성공/실패 처리
+  var urlParams = new URLSearchParams(window.location.search);
+  if (urlParams.get('success') === 'true') {
+    alert('✅ 결제가 완료되었습니다!\n\n입력하신 이메일로 영업일 기준 24시간 이내에 PDF 리포트가 발송됩니다.\n감사합니다 🙏');
+    window.history.replaceState({}, '', window.location.pathname);
+  }
+  if (urlParams.get('fail') === 'true') {
+    alert('❌ 결제가 실패했습니다. 다시 시도해주세요.');
+    window.history.replaceState({}, '', window.location.pathname);
+  }
 
 });
 </script>
