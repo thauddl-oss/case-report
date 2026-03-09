@@ -866,10 +866,12 @@ document.addEventListener('DOMContentLoaded', function() {
     // 주문번호 생성 (고유값)
     var orderId = 'CASE-' + Date.now() + '-' + Math.random().toString(36).substr(2, 6).toUpperCase();
 
-    // 토스페이먼츠 결제 요청
+    // 토스페이먼츠 결제 요청 (v2)
     var tossPayments = TossPayments(TOSS_CLIENT_KEY);
-    tossPayments.requestPayment('카드', {
-      amount: 19900,
+    var payment = tossPayments.payment({ customerKey: orderId });
+    payment.requestPayment({
+      method: 'CARD',
+      amount: { currency: 'KRW', value: 19900 },
       orderId: orderId,
       orderName: currentProductName,
       customerName: name,
