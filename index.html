@@ -576,7 +576,7 @@
       </div>
       <div class="pc-bottom">
         <div class="pc-price">19,900<small>원</small></div>
-        <button class="btn-order" onclick="openModal('연애·관계 심리 분석 리포트')">신청하기</button>
+        <button class="btn-order modal-trigger" data-title="연애·관계 심리 분석 리포트">신청하기</button>
       </div>
     </div>
 
@@ -629,7 +629,7 @@
       </div>
       <div class="pc-bottom">
         <div class="pc-price">19,900<small>원</small></div>
-        <button class="btn-order" onclick="openModal('취업·커리어 심리 분석 리포트')">신청하기</button>
+        <button class="btn-order modal-trigger" data-title="취업·커리어 심리 분석 리포트">신청하기</button>
       </div>
     </div>
 
@@ -674,9 +674,9 @@
     <h2 class="s-title">약관 및 정책</h2>
   </div>
   <div class="policy-tabs">
-    <button class="tab-btn on"  onclick="showTab('terms',this)">이용약관</button>
-    <button class="tab-btn"     onclick="showTab('privacy',this)">개인정보처리방침</button>
-    <button class="tab-btn"     onclick="showTab('refund',this)">환불정책</button>
+    <button class="tab-btn on"  data-tab="terms">이용약관</button>
+    <button class="tab-btn"     data-tab="privacy">개인정보처리방침</button>
+    <button class="tab-btn"     data-tab="refund">환불정책</button>
   </div>
 
   <div class="tab-content on" id="tab-terms">
@@ -770,7 +770,7 @@
 <!-- MODAL -->
 <div class="modal-bg" id="modal">
   <div class="modal-box">
-    <button class="modal-x" onclick="closeModal()">✕</button>
+    <button class="modal-x" id="modalClose">✕</button>
     <h3 id="mTitle"></h3>
     <p class="modal-price">19,900원 · 결제 후 영업일 기준 24시간 이내 PDF 이메일 발송</p>
     <div class="mfield">
@@ -797,19 +797,56 @@
   </div>
 </div>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-  function openModal(title) {
-    document.getElementById('mTitle').textContent = title;
-    document.getElementById('modal').classList.add('open');
-    document.body.style.overflow = 'hidden';
-  }
-  function closeModal() {
-    document.getElementById('modal').classList.remove('open');
-    document.body.style.overflow = '';
-  }
-  document.getElementById('modal').addEventListener('click', function(e) {
-    if (e.target === this) closeModal();
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+
+  // 모달 열기 - 신청하기 버튼
+  document.querySelectorAll('.modal-trigger').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      var title = this.getAttribute('data-title');
+      document.getElementById('mTitle').textContent = title;
+      document.getElementById('modal').classList.add('open');
+      document.body.style.overflow = 'hidden';
+    });
   });
 
-  function showTab(id, btn) {
-    document.querySelectorAll('.tab-content'
+  // 모달 닫기 - X 버튼
+  document.getElementById('modalClose').addEventListener('click', function() {
+    document.getElementById('modal').classList.remove('open');
+    document.body.style.overflow = '';
+  });
+
+  // 모달 닫기 - 배경 클릭
+  document.getElementById('modal').addEventListener('click', function(e) {
+    if (e.target === this) {
+      this.classList.remove('open');
+      document.body.style.overflow = '';
+    }
+  });
+
+  // 탭 전환
+  document.querySelectorAll('.tab-btn').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      var id = this.getAttribute('data-tab');
+      document.querySelectorAll('.tab-content').forEach(function(el) { el.classList.remove('on'); });
+      document.querySelectorAll('.tab-btn').forEach(function(el) { el.classList.remove('on'); });
+      document.getElementById('tab-' + id).classList.add('on');
+      this.classList.add('on');
+    });
+  });
+
+  // 푸터 약관 링크
+  document.querySelectorAll('.foot-links a[data-tab]').forEach(function(a) {
+    a.addEventListener('click', function() {
+      var id = this.getAttribute('data-tab');
+      document.querySelectorAll('.tab-content').forEach(function(el) { el.classList.remove('on'); });
+      document.querySelectorAll('.tab-btn').forEach(function(el) { el.classList.remove('on'); });
+      document.getElementById('tab-' + id).classList.add('on');
+      document.querySelector('.tab-btn[data-tab="' + id + '"]').classList.add('on');
+    });
+  });
+
+});
+</script>
+</body>
+</html>
