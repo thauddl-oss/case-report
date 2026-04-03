@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CASE | 심리 기반 성향 분석 리포트</title>
+  <title>CAZE | 심리 기반 성향 분석 리포트</title>
   <!-- 토스페이먼츠 결제위젯 SDK -->
   <script src="https://js.tosspayments.com/v2/standard"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -187,127 +187,42 @@
     }
     .product-card:hover { box-shadow: 0 6px 32px rgba(0,0,0,0.1); }
     .product-card.highlight { border-color: var(--accent); }
-    .pc-head {
-      padding: 32px 32px 24px;
-      border-bottom: 1px solid var(--line);
-    }
-    .pc-tag {
-      font-size: 10px; letter-spacing: 0.18em;
-      color: var(--accent); text-transform: uppercase; margin-bottom: 10px;
-    }
-    .pc-name {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 22px; font-weight: 500; margin-bottom: 10px;
-      line-height: 1.3;
-    }
-    .pc-hook {
-      font-size: 13px; color: var(--ink); font-weight: 500;
-      line-height: 1.7; margin-bottom: 10px;
-    }
-    .pc-desc {
-      font-size: 12px; color: var(--muted); line-height: 1.9;
-    }
-    .pc-target {
-      padding: 18px 32px;
-      background: rgba(43,92,138,.04);
-      border-bottom: 1px solid var(--line);
-    }
-    .pc-target-label {
-      font-size: 10px; letter-spacing: 0.14em; color: var(--accent);
-      text-transform: uppercase; margin-bottom: 10px; display: block;
-    }
+    .pc-head { padding: 32px 32px 24px; border-bottom: 1px solid var(--line); }
+    .pc-tag { font-size: 10px; letter-spacing: 0.18em; color: var(--accent); text-transform: uppercase; margin-bottom: 10px; }
+    .pc-name { font-family: 'Cormorant Garamond', serif; font-size: 22px; font-weight: 500; margin-bottom: 10px; line-height: 1.3; }
+    .pc-hook { font-size: 13px; color: var(--ink); font-weight: 500; line-height: 1.7; margin-bottom: 10px; }
+    .pc-desc { font-size: 12px; color: var(--muted); line-height: 1.9; }
+    .pc-target { padding: 18px 32px; background: rgba(43,92,138,.04); border-bottom: 1px solid var(--line); }
+    .pc-target-label { font-size: 10px; letter-spacing: 0.14em; color: var(--accent); text-transform: uppercase; margin-bottom: 10px; display: block; }
     .pc-target ul { list-style: none; }
-    .pc-target ul li {
-      font-size: 12px; color: var(--muted);
-      padding: 4px 0;
-      display: flex; align-items: flex-start; gap: 7px; line-height: 1.6;
-    }
-    .pc-target ul li::before {
-      content: '→'; color: var(--accent); flex-shrink: 0; font-size: 11px; margin-top: 1px;
-    }
+    .pc-target ul li { font-size: 12px; color: var(--muted); padding: 4px 0; display: flex; align-items: flex-start; gap: 7px; line-height: 1.6; }
+    .pc-target ul li::before { content: '→'; color: var(--accent); flex-shrink: 0; font-size: 11px; margin-top: 1px; }
     .pc-body { padding: 20px 32px 24px; }
-    .pc-section-label {
-      font-size: 10px; letter-spacing: 0.14em; color: var(--muted);
-      text-transform: uppercase; margin-bottom: 12px; display: block;
-    }
-    .pc-includes {
-      list-style: none; margin-bottom: 0;
-    }
-    .pc-includes li {
-      font-size: 12px; color: var(--ink);
-      padding: 8px 0; border-bottom: 1px solid var(--line);
-      display: flex; align-items: flex-start; gap: 10px; line-height: 1.6;
-    }
+    .pc-section-label { font-size: 10px; letter-spacing: 0.14em; color: var(--muted); text-transform: uppercase; margin-bottom: 12px; display: block; }
+    .pc-includes { list-style: none; margin-bottom: 0; }
+    .pc-includes li { font-size: 12px; color: var(--ink); padding: 8px 0; border-bottom: 1px solid var(--line); display: flex; align-items: flex-start; gap: 10px; line-height: 1.6; }
     .pc-includes li:last-child { border-bottom: none; }
-    .pc-includes li .li-num {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 13px; color: var(--accent);
-      flex-shrink: 0; width: 16px; margin-top: 1px;
-    }
-    .pc-meta {
-      padding: 16px 32px;
-      background: var(--bg);
-      border-top: 1px solid var(--line);
-      display: flex; gap: 20px; flex-wrap: wrap;
-    }
-    .pc-meta-item {
-      display: flex; align-items: center; gap: 6px;
-      font-size: 11px; color: var(--muted);
-    }
+    .pc-includes li .li-num { font-family: 'Cormorant Garamond', serif; font-size: 13px; color: var(--accent); flex-shrink: 0; width: 16px; margin-top: 1px; }
+    .pc-meta { padding: 16px 32px; background: var(--bg); border-top: 1px solid var(--line); display: flex; gap: 20px; flex-wrap: wrap; }
+    .pc-meta-item { display: flex; align-items: center; gap: 6px; font-size: 11px; color: var(--muted); }
     .pc-meta-item strong { color: var(--ink); font-weight: 500; }
-    .pc-bottom {
-      display: flex; align-items: center; justify-content: space-between;
-      gap: 16px; padding: 20px 32px;
-      border-top: 1px solid var(--line);
-    }
-    .pc-price {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 30px; font-weight: 400;
-    }
-    .pc-price small {
-      font-size: 13px; font-family: 'Noto Sans KR', sans-serif; font-weight: 300;
-    }
-    .btn-order {
-      padding: 12px 28px;
-      font-size: 11px; font-weight: 500; letter-spacing: 0.1em;
-      text-transform: uppercase; cursor: pointer; border: none;
-      font-family: 'Noto Sans KR', sans-serif;
-      background: var(--accent); color: #fff;
-      transition: background .2s; white-space: nowrap;
-    }
+    .pc-bottom { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 20px 32px; border-top: 1px solid var(--line); }
+    .pc-price { font-family: 'Cormorant Garamond', serif; font-size: 30px; font-weight: 400; }
+    .pc-price small { font-size: 13px; font-family: 'Noto Sans KR', sans-serif; font-weight: 300; }
+    .btn-order { padding: 12px 28px; font-size: 11px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; cursor: pointer; border: none; font-family: 'Noto Sans KR', sans-serif; background: var(--accent); color: #fff; transition: background .2s; white-space: nowrap; }
     .btn-order:hover { background: var(--ink); }
-    .delivery-note {
-      padding-top: 16px;
-      font-size: 12px; color: var(--muted); text-align: center;
-    }
+    .delivery-note { padding-top: 16px; font-size: 12px; color: var(--muted); text-align: center; }
 
     /* ── PROCESS ── */
-    .process-grid {
-      display: grid; grid-template-columns: repeat(4, 1fr);
-      gap: 1px; background: var(--line); border: 1px solid var(--line);
-    }
+    .process-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: var(--line); border: 1px solid var(--line); }
     .process-item { background: var(--white); padding: 32px 24px; }
-    .p-step {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 30px; font-weight: 300; color: var(--accent);
-      margin-bottom: 14px; display: block;
-    }
+    .p-step { font-family: 'Cormorant Garamond', serif; font-size: 30px; font-weight: 300; color: var(--accent); margin-bottom: 14px; display: block; }
     .process-item h4 { font-size: 13px; font-weight: 500; margin-bottom: 7px; }
     .process-item p  { font-size: 12px; color: var(--muted); line-height: 1.8; }
 
     /* ── POLICIES ── */
-    .policy-tabs {
-      display: flex; border-bottom: 1px solid var(--line);
-      margin-bottom: 36px;
-    }
-    .tab-btn {
-      padding: 13px 28px;
-      font-size: 12px; font-weight: 500; letter-spacing: 0.05em;
-      background: none; border: none; cursor: pointer;
-      color: var(--muted); border-bottom: 2px solid transparent;
-      font-family: 'Noto Sans KR', sans-serif;
-      transition: all .2s; margin-bottom: -1px;
-    }
+    .policy-tabs { display: flex; border-bottom: 1px solid var(--line); margin-bottom: 36px; }
+    .tab-btn { padding: 13px 28px; font-size: 12px; font-weight: 500; letter-spacing: 0.05em; background: none; border: none; cursor: pointer; color: var(--muted); border-bottom: 2px solid transparent; font-family: 'Noto Sans KR', sans-serif; transition: all .2s; margin-bottom: -1px; }
     .tab-btn.on { color: var(--ink); border-bottom-color: var(--accent); }
     .tab-content { display: none; }
     .tab-content.on { display: block; }
@@ -317,91 +232,37 @@
     .pt table { width:100%; border-collapse:collapse; font-size:12px; margin:12px 0; }
     .pt table th { background:rgba(43,92,138,.07); padding:10px 14px; text-align:left; font-weight:500; border:1px solid var(--line); }
     .pt table td { padding:10px 14px; border:1px solid var(--line); color:var(--muted); }
-    .refund-box {
-      background: rgba(43,92,138,.07);
-      border-left: 3px solid var(--accent);
-      padding: 16px 20px; margin: 14px 0;
-      font-size: 13px; font-weight: 500; line-height: 1.85;
-    }
+    .refund-box { background: rgba(43,92,138,.07); border-left: 3px solid var(--accent); padding: 16px 20px; margin: 14px 0; font-size: 13px; font-weight: 500; line-height: 1.85; }
 
     /* ── FOOTER ── */
-    footer {
-      background: var(--ink); color: #555;
-      padding: 52px 56px 36px;
-    }
-    .foot-logo {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 20px; font-weight: 600; letter-spacing: 0.22em;
-      color: #bbb; margin-bottom: 28px; display: block;
-    }
+    footer { background: var(--ink); color: #555; padding: 52px 56px 36px; }
+    .foot-logo { font-family: 'Cormorant Garamond', serif; font-size: 20px; font-weight: 600; letter-spacing: 0.22em; color: #bbb; margin-bottom: 28px; display: block; }
     .foot-logo span { color: var(--accent2); }
-    .biz-info {
-      font-size: 12px; line-height: 2.2;
-      border-top: 1px solid #1d1c1b; padding-top: 24px;
-    }
+    .biz-info { font-size: 12px; line-height: 2.2; border-top: 1px solid #1d1c1b; padding-top: 24px; }
     .biz-info strong { color: #777; font-weight: 400; }
     .biz-info a { color: #555; text-decoration: none; transition: color .2s; }
     .biz-info a:hover { color: var(--accent2); }
-    .foot-bottom {
-      margin-top: 22px; padding-top: 20px;
-      border-top: 1px solid #1d1c1b;
-      display: flex; justify-content: space-between; align-items: center;
-      flex-wrap: wrap; gap: 10px;
-    }
+    .foot-bottom { margin-top: 22px; padding-top: 20px; border-top: 1px solid #1d1c1b; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; }
     .foot-links { display: flex; gap: 20px; }
     .foot-links a { font-size: 11px; color: #3a3938; text-decoration: none; transition: color .2s; }
     .foot-links a:hover { color: var(--accent2); }
     .foot-copy { font-size: 11px; color: #2e2d2c; }
 
     /* ── MODAL ── */
-    .modal-bg {
-      display: none; position: fixed; inset: 0;
-      background: rgba(0,0,0,.65); z-index: 500;
-      align-items: center; justify-content: center;
-      backdrop-filter: blur(4px);
-    }
+    .modal-bg { display: none; position: fixed; inset: 0; background: rgba(0,0,0,.65); z-index: 500; align-items: center; justify-content: center; backdrop-filter: blur(4px); }
     .modal-bg.open { display: flex; }
-    .modal-box {
-      background: var(--white);
-      width: 90%; max-width: 440px;
-      padding: 44px 36px 36px; position: relative;
-      max-height: 90vh; overflow-y: auto;
-    }
-    .modal-x {
-      position: absolute; top: 16px; right: 18px;
-      background: none; border: none; cursor: pointer;
-      font-size: 18px; color: var(--muted);
-    }
-    .modal-box h3 {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 21px; font-weight: 500; margin-bottom: 4px;
-    }
+    .modal-box { background: var(--white); width: 90%; max-width: 440px; padding: 44px 36px 36px; position: relative; max-height: 90vh; overflow-y: auto; }
+    .modal-x { position: absolute; top: 16px; right: 18px; background: none; border: none; cursor: pointer; font-size: 18px; color: var(--muted); }
+    .modal-box h3 { font-family: 'Cormorant Garamond', serif; font-size: 21px; font-weight: 500; margin-bottom: 4px; }
     .modal-price { font-size: 12px; color: var(--accent); margin-bottom: 26px; }
     .mfield { margin-bottom: 14px; }
     .mfield label { display: block; font-size: 11px; letter-spacing: 0.06em; color: var(--muted); margin-bottom: 5px; }
-    .mfield input, .mfield select, .mfield textarea {
-      width: 100%; padding: 11px 13px;
-      border: 1px solid var(--line); background: var(--bg);
-      font-family: 'Noto Sans KR', sans-serif; font-size: 13px;
-      color: var(--ink); outline: none;
-      transition: border-color .2s; resize: none;
-    }
+    .mfield input, .mfield select, .mfield textarea { width: 100%; padding: 11px 13px; border: 1px solid var(--line); background: var(--bg); font-family: 'Noto Sans KR', sans-serif; font-size: 13px; color: var(--ink); outline: none; transition: border-color .2s; resize: none; }
     .mfield input:focus, .mfield textarea:focus { border-color: var(--accent); }
-    .mcheck {
-      display: flex; align-items: flex-start; gap: 8px;
-      font-size: 12px; color: var(--muted); line-height: 1.6;
-      margin-bottom: 8px;
-    }
+    .mcheck { display: flex; align-items: flex-start; gap: 8px; font-size: 12px; color: var(--muted); line-height: 1.6; margin-bottom: 8px; }
     .mcheck input { width: auto; flex-shrink: 0; margin-top: 3px; accent-color: var(--accent); }
     .mcheck a { color: var(--accent); }
-    .modal-cta {
-      width: 100%; padding: 14px;
-      background: var(--accent); color: #fff;
-      border: none; cursor: pointer;
-      font-family: 'Noto Sans KR', sans-serif;
-      font-size: 13px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase;
-      transition: background .2s; margin-top: 14px;
-    }
+    .modal-cta { width: 100%; padding: 14px; background: var(--accent); color: #fff; border: none; cursor: pointer; font-family: 'Noto Sans KR', sans-serif; font-size: 13px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; transition: background .2s; margin-top: 14px; }
     .modal-cta:hover { background: var(--ink); }
 
     /* ── RESPONSIVE ── */
@@ -421,7 +282,7 @@
 
 <!-- NAV -->
 <nav>
-  <a href="#" class="logo">C<span>A</span>SE</a>
+  <a href="#" class="logo">C<span>A</span>ZE</a>
   <ul class="nav-links">
     <li><a href="#how">소개</a></li>
     <li><a href="#products">리포트</a></li>
@@ -498,35 +359,26 @@
 <section class="section" id="how">
   <div class="s-header">
     <span class="s-num">01 — About</span>
-    <h2 class="s-title">CASE가 분석하는 방법</h2>
+    <h2 class="s-title">CAZE가 분석하는 방법</h2>
   </div>
   <div class="how-grid">
     <div class="how-card">
       <div class="how-icon">
-        <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
-          <circle cx="9" cy="7" r="3.5" stroke="currentColor" stroke-width="1.3"/>
-          <path d="M2 17c0-3.866 3.134-7 7-7s7 3.134 7 7" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/>
-        </svg>
+        <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="7" r="3.5" stroke="currentColor" stroke-width="1.3"/><path d="M2 17c0-3.866 3.134-7 7-7s7 3.134 7 7" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>
       </div>
       <h4>심리 프로파일링</h4>
       <p>Big Five 성격 이론, 애착 유형, 인지 편향 등 학문적으로 검증된 심리학 모델을 활용해 개인 성향을 다각도로 분석합니다.</p>
     </div>
     <div class="how-card">
       <div class="how-icon">
-        <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
-          <rect x="1" y="11" width="4" height="6" stroke="currentColor" stroke-width="1.3"/>
-          <rect x="7" y="7"  width="4" height="10" stroke="currentColor" stroke-width="1.3"/>
-          <rect x="13" y="2" width="4" height="15" stroke="currentColor" stroke-width="1.3"/>
-        </svg>
+        <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><rect x="1" y="11" width="4" height="6" stroke="currentColor" stroke-width="1.3"/><rect x="7" y="7" width="4" height="10" stroke="currentColor" stroke-width="1.3"/><rect x="13" y="2" width="4" height="15" stroke="currentColor" stroke-width="1.3"/></svg>
       </div>
       <h4>통계 케이스 매칭</h4>
       <p>비슷한 성향 프로필을 가진 케이스 데이터와 통계적으로 매칭합니다. 직관이 아닌 데이터가 분석의 근거입니다.</p>
     </div>
     <div class="how-card">
       <div class="how-icon">
-        <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
-          <path d="M3 9.5l4 4 8-8" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
+        <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M3 9.5l4 4 8-8" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </div>
       <h4>행동 처방 제시</h4>
       <p>분석 결과를 바탕으로 지금 이 시점에서 실행 가능한 구체적인 행동 전략을 제안합니다. 읽고 끝나는 리포트가 아닙니다.</p>
@@ -541,21 +393,14 @@
     <h2 class="s-title">심리 분석 리포트</h2>
   </div>
   <div class="products-wrap">
-
     <!-- 연애·관계 -->
     <div class="product-card">
-      <div class="pc-visual">
-        <img src="https://raw.githubusercontent.com/thauddl-oss/case-images/main/1.jpg" alt="연애·관계">
-      </div>
+      <div class="pc-visual"><img src="https://raw.githubusercontent.com/thauddl-oss/case-images/main/1.jpg" alt="연애·관계"></div>
       <div class="pc-head">
         <div class="pc-tag">Romance &amp; Relationship</div>
         <div class="pc-name">연애·관계<br>심리 분석 리포트</div>
         <div class="pc-hook">"나는 왜 항상 같은 패턴의 연애를 반복할까?"</div>
-        <div class="pc-desc">
-          애착 이론과 관계 심리학을 기반으로 나의 관계 행동 패턴을 분석합니다.
-          감정 반응 방식, 갈등 처리 유형, 친밀감 형성 패턴을 진단하고
-          유사 케이스 데이터와 매칭하여 지금 나에게 필요한 관계 전략을 구체적으로 제시합니다.
-        </div>
+        <div class="pc-desc">애착 이론과 관계 심리학을 기반으로 나의 관계 행동 패턴을 분석합니다. 감정 반응 방식, 갈등 처리 유형, 친밀감 형성 패턴을 진단하고 유사 케이스 데이터와 매칭하여 지금 나에게 필요한 관계 전략을 구체적으로 제시합니다.</div>
       </div>
       <div class="pc-target">
         <span class="pc-target-label">이런 분께 추천합니다</span>
@@ -579,39 +424,23 @@
         </ul>
       </div>
       <div class="pc-meta">
-        <div class="pc-meta-item">
-          <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><rect x="1" y="1" width="10" height="10" rx="1" stroke="currentColor" stroke-width="1.1"/><path d="M1 4h10" stroke="currentColor" stroke-width="1.1"/></svg>
-          <span>분량 <strong>A4 기준 20~25페이지</strong></span>
-        </div>
-        <div class="pc-meta-item">
-          <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><circle cx="6" cy="6" r="5" stroke="currentColor" stroke-width="1.1"/><path d="M6 3v3l2 2" stroke="currentColor" stroke-width="1.1" stroke-linecap="round"/></svg>
-          <span>발송 <strong>영업일 기준 24시간 이내</strong></span>
-        </div>
-        <div class="pc-meta-item">
-          <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M1 9l3-3 2 2 4-5" stroke="currentColor" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          <span>형식 <strong>PDF 리포트 (이메일 발송)</strong></span>
-        </div>
+        <div class="pc-meta-item"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><rect x="1" y="1" width="10" height="10" rx="1" stroke="currentColor" stroke-width="1.1"/><path d="M1 4h10" stroke="currentColor" stroke-width="1.1"/></svg><span>분량 <strong>A4 기준 20~25페이지</strong></span></div>
+        <div class="pc-meta-item"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><circle cx="6" cy="6" r="5" stroke="currentColor" stroke-width="1.1"/><path d="M6 3v3l2 2" stroke="currentColor" stroke-width="1.1" stroke-linecap="round"/></svg><span>발송 <strong>영업일 기준 24시간 이내</strong></span></div>
+        <div class="pc-meta-item"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M1 9l3-3 2 2 4-5" stroke="currentColor" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round"/></svg><span>형식 <strong>PDF 리포트 (이메일 발송)</strong></span></div>
       </div>
       <div class="pc-bottom">
         <div class="pc-price">19,900<small>원</small></div>
         <button class="btn-order modal-trigger" data-title="연애·관계 심리 분석 리포트">신청하기</button>
       </div>
     </div>
-
     <!-- 취업·커리어 -->
     <div class="product-card highlight">
-      <div class="pc-visual">
-        <img src="https://raw.githubusercontent.com/thauddl-oss/case-images/main/2.jpg" alt="취업·커리어">
-      </div>
+      <div class="pc-visual"><img src="https://raw.githubusercontent.com/thauddl-oss/case-images/main/2.jpg" alt="취업·커리어"></div>
       <div class="pc-head">
         <div class="pc-tag">Career &amp; Job</div>
         <div class="pc-name">취업·커리어<br>심리 분석 리포트</div>
         <div class="pc-hook">"나는 어떤 환경에서 가장 잘 성장할 수 있을까?"</div>
-        <div class="pc-desc">
-          직업 심리학과 성격 유형 이론을 기반으로 나의 직업 적성과 커리어 성향을 분석합니다.
-          성취 동기, 스트레스 반응, 의사결정 패턴을 진단하고
-          유사 케이스 데이터와 매칭하여 지금 나에게 맞는 커리어 전략을 구체적으로 제시합니다.
-        </div>
+        <div class="pc-desc">직업 심리학과 성격 유형 이론을 기반으로 나의 직업 적성과 커리어 성향을 분석합니다. 성취 동기, 스트레스 반응, 의사결정 패턴을 진단하고 유사 케이스 데이터와 매칭하여 지금 나에게 맞는 커리어 전략을 구체적으로 제시합니다.</div>
       </div>
       <div class="pc-target">
         <span class="pc-target-label">이런 분께 추천합니다</span>
@@ -635,25 +464,15 @@
         </ul>
       </div>
       <div class="pc-meta">
-        <div class="pc-meta-item">
-          <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><rect x="1" y="1" width="10" height="10" rx="1" stroke="currentColor" stroke-width="1.1"/><path d="M1 4h10" stroke="currentColor" stroke-width="1.1"/></svg>
-          <span>분량 <strong>A4 기준 20~25페이지</strong></span>
-        </div>
-        <div class="pc-meta-item">
-          <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><circle cx="6" cy="6" r="5" stroke="currentColor" stroke-width="1.1"/><path d="M6 3v3l2 2" stroke="currentColor" stroke-width="1.1" stroke-linecap="round"/></svg>
-          <span>발송 <strong>영업일 기준 24시간 이내</strong></span>
-        </div>
-        <div class="pc-meta-item">
-          <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M1 9l3-3 2 2 4-5" stroke="currentColor" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          <span>형식 <strong>PDF 리포트 (이메일 발송)</strong></span>
-        </div>
+        <div class="pc-meta-item"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><rect x="1" y="1" width="10" height="10" rx="1" stroke="currentColor" stroke-width="1.1"/><path d="M1 4h10" stroke="currentColor" stroke-width="1.1"/></svg><span>분량 <strong>A4 기준 20~25페이지</strong></span></div>
+        <div class="pc-meta-item"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><circle cx="6" cy="6" r="5" stroke="currentColor" stroke-width="1.1"/><path d="M6 3v3l2 2" stroke="currentColor" stroke-width="1.1" stroke-linecap="round"/></svg><span>발송 <strong>영업일 기준 24시간 이내</strong></span></div>
+        <div class="pc-meta-item"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M1 9l3-3 2 2 4-5" stroke="currentColor" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round"/></svg><span>형식 <strong>PDF 리포트 (이메일 발송)</strong></span></div>
       </div>
       <div class="pc-bottom">
         <div class="pc-price">19,900<small>원</small></div>
         <button class="btn-order modal-trigger" data-title="취업·커리어 심리 분석 리포트">신청하기</button>
       </div>
     </div>
-
   </div>
   <p class="delivery-note">※ 결제 완료 후 영업일 기준 24시간 이내 입력하신 이메일로 PDF 리포트가 발송됩니다.</p>
 </section>
@@ -665,26 +484,10 @@
     <h2 class="s-title">이용 방법</h2>
   </div>
   <div class="process-grid">
-    <div class="process-item">
-      <span class="p-step">01</span>
-      <h4>리포트 선택</h4>
-      <p>원하는 리포트를 선택하고 결제를 진행합니다.</p>
-    </div>
-    <div class="process-item">
-      <span class="p-step">02</span>
-      <h4>정보 입력</h4>
-      <p>이름, 이메일, 현재 상황을 간략히 입력합니다.</p>
-    </div>
-    <div class="process-item">
-      <span class="p-step">03</span>
-      <h4>심리 분석</h4>
-      <p>심리학 + 통계 케이스 분석 시스템이 맞춤 리포트를 생성합니다.</p>
-    </div>
-    <div class="process-item">
-      <span class="p-step">04</span>
-      <h4>이메일 수신</h4>
-      <p>24시간 이내 이메일로 PDF 리포트가 발송됩니다.</p>
-    </div>
+    <div class="process-item"><span class="p-step">01</span><h4>리포트 선택</h4><p>원하는 리포트를 선택하고 결제를 진행합니다.</p></div>
+    <div class="process-item"><span class="p-step">02</span><h4>정보 입력</h4><p>이름, 이메일, 현재 상황을 간략히 입력합니다.</p></div>
+    <div class="process-item"><span class="p-step">03</span><h4>심리 분석</h4><p>심리학 + 통계 케이스 분석 시스템이 맞춤 리포트를 생성합니다.</p></div>
+    <div class="process-item"><span class="p-step">04</span><h4>이메일 수신</h4><p>24시간 이내 이메일로 PDF 리포트가 발송됩니다.</p></div>
   </div>
 </section>
 
@@ -695,15 +498,15 @@
     <h2 class="s-title">약관 및 정책</h2>
   </div>
   <div class="policy-tabs">
-    <button class="tab-btn on"  data-tab="terms">이용약관</button>
-    <button class="tab-btn"     data-tab="privacy">개인정보처리방침</button>
-    <button class="tab-btn"     data-tab="refund">환불정책</button>
+    <button class="tab-btn on" data-tab="terms">이용약관</button>
+    <button class="tab-btn" data-tab="privacy">개인정보처리방침</button>
+    <button class="tab-btn" data-tab="refund">환불정책</button>
   </div>
 
   <div class="tab-content on" id="tab-terms">
     <div class="pt">
       <h4>제1조 (목적)</h4>
-      <p>이 약관은 미네컴퍼니(이하 "회사")가 운영하는 CASE 서비스(이하 "서비스")의 이용 조건 및 절차에 관한 사항을 규정함을 목적으로 합니다.</p>
+      <p>이 약관은 미네컴퍼니(이하 "회사")가 운영하는 CAZE 서비스(이하 "서비스")의 이용 조건 및 절차에 관한 사항을 규정함을 목적으로 합니다.</p>
       <h4>제2조 (서비스의 내용)</h4>
       <p>회사는 심리학 이론 및 통계 케이스 분석 기반의 성향 분석 리포트를 디지털 콘텐츠(PDF) 형태로 제공합니다. 결제 완료 후 입력된 정보를 바탕으로 영업일 기준 24시간 이내에 이메일로 발송됩니다.</p>
       <h4>제3조 (이용계약 성립)</h4>
@@ -718,7 +521,7 @@
       <p>본 서비스는 참고용 정보 제공을 목적으로 하며, 의료적·법적·재정적 전문 조언을 대체하지 않습니다. 서비스 이용에 따른 결정과 그 결과는 이용자 본인에게 귀속됩니다.</p>
       <h4>제6조 (약관 변경)</h4>
       <p>회사는 관련 법령을 위반하지 않는 범위에서 본 약관을 변경할 수 있으며, 변경 시 서비스 내 공지합니다.</p>
-      <p style="margin-top:16px; font-size:12px; color:#aaa;">시행일: 2025년 1월 1일</p>
+      <p style="margin-top:16px; font-size:12px; color:#aaa;">시행일: 2026년 4월 1일</p>
     </div>
   </div>
 
@@ -737,7 +540,7 @@
       <p>성명: 정장미 &nbsp;|&nbsp; 이메일: <a href="mailto:thauddl@gmail.com" style="color:var(--accent);">thauddl@gmail.com</a> &nbsp;|&nbsp; 전화: 070-7954-8693</p>
       <h4>4. 이용자의 권리</h4>
       <p>이용자는 언제든지 개인정보 열람, 정정, 삭제, 처리정지를 요청할 수 있습니다. 요청은 이메일(<a href="mailto:thauddl@gmail.com" style="color:var(--accent);">thauddl@gmail.com</a>)로 문의해 주세요.</p>
-      <p style="margin-top:16px; font-size:12px; color:#aaa;">시행일: 2025년 1월 1일</p>
+      <p style="margin-top:16px; font-size:12px; color:#aaa;">시행일: 2026년 4월 1일</p>
     </div>
   </div>
 
@@ -767,7 +570,7 @@
 
 <!-- FOOTER -->
 <footer>
-  <span class="foot-logo">C<span>A</span>SE</span>
+  <span class="foot-logo">C<span>A</span>ZE</span>
   <div class="biz-info">
     <strong>상호명</strong>: 미네컴퍼니 &nbsp;|&nbsp;
     <strong>대표자</strong>: 정장미 &nbsp;|&nbsp;
@@ -785,7 +588,7 @@
       <a href="#policies" onclick="showTabById('refund')">환불정책</a>
       <a href="mailto:thauddl@gmail.com" style="color:var(--accent);">고객센터</a>
     </div>
-    <p class="foot-copy">© 2025 미네컴퍼니. All rights reserved.</p>
+    <p class="foot-copy">© 2026 미네컴퍼니. All rights reserved.</p>
   </div>
 </footer>
 
@@ -795,26 +598,11 @@
     <button class="modal-x" id="modalClose">✕</button>
     <h3 id="mTitle"></h3>
     <p class="modal-price">19,900원 · 결제 후 영업일 기준 24시간 이내 PDF 이메일 발송</p>
-    <div class="mfield">
-      <label>이름 *</label>
-      <input type="text" id="inputName" placeholder="홍길동">
-    </div>
-    <div class="mfield">
-      <label>이메일 (리포트 수신 주소) *</label>
-      <input type="email" id="inputEmail" placeholder="example@email.com">
-    </div>
-    <div class="mfield">
-      <label>현재 상황 / 분석 요청사항 (선택)</label>
-      <textarea rows="3" id="inputMemo" placeholder="현재 고민하시는 상황을 간략히 적어주시면 더 정밀한 분석이 가능합니다."></textarea>
-    </div>
-    <div class="mcheck">
-      <input type="checkbox" id="ck1">
-      <label for="ck1"><a href="#policies">이용약관</a> 및 <a href="#policies">개인정보처리방침</a>에 동의합니다 (필수)</label>
-    </div>
-    <div class="mcheck">
-      <input type="checkbox" id="ck2">
-      <label for="ck2"><a href="#policies">환불정책</a>에 동의합니다 — 리포트 발송 후 환불 불가 (필수)</label>
-    </div>
+    <div class="mfield"><label>이름 *</label><input type="text" id="inputName" placeholder="홍길동"></div>
+    <div class="mfield"><label>이메일 (리포트 수신 주소) *</label><input type="email" id="inputEmail" placeholder="example@email.com"></div>
+    <div class="mfield"><label>현재 상황 / 분석 요청사항 (선택)</label><textarea rows="3" id="inputMemo" placeholder="현재 고민하시는 상황을 간략히 적어주시면 더 정밀한 분석이 가능합니다."></textarea></div>
+    <div class="mcheck"><input type="checkbox" id="ck1"><label for="ck1"><a href="#policies">이용약관</a> 및 <a href="#policies">개인정보처리방침</a>에 동의합니다 (필수)</label></div>
+    <div class="mcheck"><input type="checkbox" id="ck2"><label for="ck2"><a href="#policies">환불정책</a>에 동의합니다 — 리포트 발송 후 환불 불가 (필수)</label></div>
     <p id="errorMsg" style="font-size:12px; color:#c0392b; margin-top:8px; display:none;"></p>
     <button class="modal-cta" id="payBtn">결제하기</button>
   </div>
@@ -825,7 +613,6 @@ var TOSS_CLIENT_KEY = 'test_ck_ZLKGPx4M3MRdxm7wyq44VBaWypv1';
 var currentProductName = '';
 
 document.addEventListener('DOMContentLoaded', function() {
-
   document.querySelectorAll('.modal-trigger').forEach(function(btn) {
     btn.addEventListener('click', function() {
       currentProductName = this.getAttribute('data-title');
@@ -847,10 +634,7 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 
   document.getElementById('modal').addEventListener('click', function(e) {
-    if (e.target === this) {
-      this.classList.remove('open');
-      document.body.style.overflow = '';
-    }
+    if (e.target === this) { this.classList.remove('open'); document.body.style.overflow = ''; }
   });
 
   document.getElementById('payBtn').addEventListener('click', function() {
@@ -860,21 +644,12 @@ document.addEventListener('DOMContentLoaded', function() {
     var ck2   = document.getElementById('ck2').checked;
     var errEl = document.getElementById('errorMsg');
 
-    if (!name) {
-      errEl.textContent = '이름을 입력해주세요.';
-      errEl.style.display = 'block'; return;
-    }
-    if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-      errEl.textContent = '올바른 이메일 주소를 입력해주세요.';
-      errEl.style.display = 'block'; return;
-    }
-    if (!ck1 || !ck2) {
-      errEl.textContent = '필수 약관에 모두 동의해주세요.';
-      errEl.style.display = 'block'; return;
-    }
+    if (!name) { errEl.textContent = '이름을 입력해주세요.'; errEl.style.display = 'block'; return; }
+    if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { errEl.textContent = '올바른 이메일 주소를 입력해주세요.'; errEl.style.display = 'block'; return; }
+    if (!ck1 || !ck2) { errEl.textContent = '필수 약관에 모두 동의해주세요.'; errEl.style.display = 'block'; return; }
     errEl.style.display = 'none';
 
-    var orderId = 'CASE-' + Date.now() + '-' + Math.random().toString(36).substr(2, 6).toUpperCase();
+    var orderId = 'CAZE-' + Date.now() + '-' + Math.random().toString(36).substr(2, 6).toUpperCase();
 
     var tossPayments = TossPayments(TOSS_CLIENT_KEY);
     var payment = tossPayments.payment({ customerKey: orderId });
@@ -888,10 +663,7 @@ document.addEventListener('DOMContentLoaded', function() {
       successUrl: window.location.origin + window.location.pathname + '?success=true&orderId=' + orderId + '&email=' + encodeURIComponent(email) + '&product=' + encodeURIComponent(currentProductName),
       failUrl: window.location.origin + window.location.pathname + '?fail=true',
     }).catch(function(err) {
-      if (err.code !== 'USER_CANCEL') {
-        errEl.textContent = '결제 중 오류가 발생했습니다: ' + err.message;
-        errEl.style.display = 'block';
-      }
+      if (err.code !== 'USER_CANCEL') { errEl.textContent = '결제 중 오류가 발생했습니다: ' + err.message; errEl.style.display = 'block'; }
     });
   });
 
@@ -905,26 +677,15 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
 
-  document.querySelectorAll('.foot-links a[data-tab]').forEach(function(a) {
-    a.addEventListener('click', function() {
-      var id = this.getAttribute('data-tab');
-      document.querySelectorAll('.tab-content').forEach(function(el) { el.classList.remove('on'); });
-      document.querySelectorAll('.tab-btn').forEach(function(el) { el.classList.remove('on'); });
-      document.getElementById('tab-' + id).classList.add('on');
-      document.querySelector('.tab-btn[data-tab="' + id + '"]').classList.add('on');
-    });
-  });
-
   var urlParams = new URLSearchParams(window.location.search);
   if (urlParams.get('success') === 'true') {
-    alert('✅ 결제가 완료되었습니다!\n\n입력하신 이메일로 영업일 기준 24시간 이내에 PDF 리포트가 발송됩니다.\n감사합니다 🙏');
+    alert('✅ 결제가 완료되었습니다!\n\n입력하신 이메일로 영업일 기준 24시간 이내에 PDF 리포트가 발송됩니다.\n감사합니다');
     window.history.replaceState({}, '', window.location.pathname);
   }
   if (urlParams.get('fail') === 'true') {
-    alert('❌ 결제가 실패했습니다. 다시 시도해주세요.');
+    alert('결제가 실패했습니다. 다시 시도해주세요.');
     window.history.replaceState({}, '', window.location.pathname);
   }
-
 });
 </script>
 </body>
