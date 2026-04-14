@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CAZE | 심리 기반 성향 분석 리포트</title>
+  <title>CASE | 심리 기반 성향 분석 리포트</title>
   <!-- 토스페이먼츠 결제위젯 SDK -->
   <script src="https://js.tosspayments.com/v2/standard"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -282,7 +282,7 @@
 
 <!-- NAV -->
 <nav>
-  <a href="#" class="logo">C<span>A</span>ZE</a>
+  <a href="#" class="logo">C<span>A</span>SE</a>
   <ul class="nav-links">
     <li><a href="#how">소개</a></li>
     <li><a href="#products">리포트</a></li>
@@ -359,7 +359,7 @@
 <section class="section" id="how">
   <div class="s-header">
     <span class="s-num">01 — About</span>
-    <h2 class="s-title">CAZE가 분석하는 방법</h2>
+    <h2 class="s-title">CASE가 분석하는 방법</h2>
   </div>
   <div class="how-grid">
     <div class="how-card">
@@ -506,7 +506,7 @@
   <div class="tab-content on" id="tab-terms">
     <div class="pt">
       <h4>제1조 (목적)</h4>
-      <p>이 약관은 미네컴퍼니(이하 "회사")가 운영하는 CAZE 서비스(이하 "서비스")의 이용 조건 및 절차에 관한 사항을 규정함을 목적으로 합니다.</p>
+      <p>이 약관은 미네컴퍼니(이하 "회사")가 운영하는 CASE 서비스(이하 "서비스")의 이용 조건 및 절차에 관한 사항을 규정함을 목적으로 합니다.</p>
       <h4>제2조 (서비스의 내용)</h4>
       <p>회사는 심리학 이론 및 통계 케이스 분석 기반의 성향 분석 리포트를 디지털 콘텐츠(PDF) 형태로 제공합니다. 결제 완료 후 입력된 정보를 바탕으로 영업일 기준 24시간 이내에 이메일로 발송됩니다.</p>
       <h4>제3조 (이용계약 성립)</h4>
@@ -570,7 +570,7 @@
 
 <!-- FOOTER -->
 <footer>
-  <span class="foot-logo">C<span>A</span>ZE</span>
+  <span class="foot-logo">C<span>A</span>SE</span>
   <div class="biz-info">
     <strong>상호명</strong>: 미네컴퍼니 &nbsp;|&nbsp;
     <strong>대표자</strong>: 정장미 &nbsp;|&nbsp;
@@ -649,7 +649,7 @@ document.addEventListener('DOMContentLoaded', function() {
     if (!ck1 || !ck2) { errEl.textContent = '필수 약관에 모두 동의해주세요.'; errEl.style.display = 'block'; return; }
     errEl.style.display = 'none';
 
-    var orderId = 'CAZE-' + Date.now() + '-' + Math.random().toString(36).substr(2, 6).toUpperCase();
+    var orderId = 'CASE-' + Date.now() + '-' + Math.random().toString(36).substr(2, 6).toUpperCase();
 
     var tossPayments = TossPayments(TOSS_CLIENT_KEY);
     var payment = tossPayments.payment({ customerKey: orderId });
